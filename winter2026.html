@@ -76,6 +76,7 @@
         <a href="https://github.com/leanprover-community/mathlib4/pull/32824">1</a>,
         <a href="https://github.com/leanprover-community/mathlib4/pull/32851">2</a>
       </li>
+      <li><b>Members:</b> Theo Meek, Nathan Pao, Annie Cao, Josh</li>
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
 
@@ -87,6 +88,7 @@
         The theorem that a regular local ring is a UFD, referred by some as the Auslander-Buchsbaum theorem.
         See Stacks Project <a href="https://stacks.math.columbia.edu/tag/0AG0">0AG0</a>.
       </li>
+      <li><b>Members:</b> Nailin Guan, Dora Kassabova</li>
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
 
@@ -98,6 +100,7 @@
         Monogenic extensions of regular local rings following
         <a href="https://arxiv.org/abs/2503.07846">arXiv:2503.07846</a>, lemmas 3.1 and 3.2.
       </li>
+      <li><b>Members:</b> George Peykanu, Grant Yang</li>
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
 
@@ -105,6 +108,7 @@
     <ul>
       <li><b>Project Leader:</b> Nelson Niu</li>
       <li><b>Formalization target:</b> Nelson Niu &amp; David Spivak’s Polynomial Functors <a href="https://toposinstitute.github.io/poly/poly-book.pdf">textbook</a>.</li>
+      <li><b>Members:</b> Sukhman Singh</li>
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
 
@@ -134,6 +138,7 @@
         that can both be run efficiently and be reasoned about. Our main goal is to implement basic algorithms with
         applications to linear algebra while also proving (in Lean) correctness of said algorithms.
       </li>
+      <li><b>Members:</b> Joseph Qian, Junye Ji, Veer Shukla, Alan Chang</li>
       <li><b>Code:</b> <a href="https://github.com/uw-math-ai/provable_computation">GitHub repo</a></li>
     </ul>
 
@@ -154,6 +159,7 @@
         Fine-tune LLMs to correct Lean errors, using compiler feedback. Create a diverse dataset of errors and train on
         it. Submit to ICML 2026 in January.
       </li>
+      <li><b>Members:</b> Evan Wang, Simon Chess, Daniel Lee, Siyuan Ge, Ajit Mallavarapu</li>
       <li><b>Code:</b> <a href="https://github.com/uw-math-ai/lean-error-correction">GitHub repo</a></li>
     </ul>
 
@@ -167,30 +173,20 @@
         January.
       </li>
       <li><b>Demo:</b> <a href="https://huggingface.co/spaces/uw-math-ai/theorem-search">HF link</a></li>
+      <li><b>Members:</b> Eric Leonen, Sophie Szeto, Artemii Remizov, Luke Alexander</li>
       <li><b>Code:</b> <a href="https://github.com/uw-math-ai/TheoremSearch">GitHub repo</a></li>
     </ul>
 
     <h3>Mathematician's copilot: Math2Vec</h3>
     <ul>
-      <li><b>Project Leaders:</b> Vasily Ilin and Giovanni Inchiostro</li>
+      <li><b>Project Leader:</b> Henry Kvinge (PNNL)</li>
+      <li><b>Members:</b> Saharsh Bhargava, Cecilia, Jiahe Lu, Michael, Kedar Chintalapati, Rachit Jaiswal, Samarth Rao, Jared Darlington, Leo Carlin</li>
       <li>
         <b>Description:</b>
         Train a text embedder that understands math, LaTeX and Lean. This will improve search over Lean, and natural
         language theorem search. It can be used for RAG as well. Use arXiv, MathOverflow, mathlib, Lean Reservoir, and
         possibly other sources. Create an evaluation benchmark as well. Goal: submit to EMNLP 2026 in May.
       </li>
-    </ul>
-
-    <h3>Mathematician's copilot: universal theorem graph</h3>
-    <ul>
-      <li><b>Project Leaders:</b> Vasily Ilin and Giovanni Inchiostro</li>
-      <li>
-        <b>Description:</b>
-        Create the dependency graph of all theorems in arXiv, Stacks Project, and other open sources. Parse the
-        <code>\ref</code> and <code>\cite</code> commands to build the graph. This will help with theorem search, and
-        also with autoformalization. Goal: submit to Neurips 2026 datasets &amp; benchmarks in May.
-      </li>
-      <li><b>Prerequisites:</b> Python, LaTeX experience.</li>
     </ul>
 
     <h3>CayleyPy: search on massive combinatorial graphs</h3>
@@ -200,6 +196,7 @@
         <b>Description:</b>
         Optimize <a href="https://github.com/cayleypy/cayleypy">CayleyPy</a>, make a CLI, and use it on various combinatorial problems, such as estimating diameters of symmetric groups. Goal: submission to ICLR 2027 in September. See <a href="https://docs.google.com/document/d/1CkM2QaZUbJAflKCdj3qvHQaeTi0mSsUuhzZNSp17k08/edit?usp=sharing">project proposal document</a>.
       </li>
+      <li><b>Members:</b> Danny Zhang, Gaurang Pendharkar, Merav Frank, Sambhu Ganesan, Xiaoxing Zhang</li>
       <li><b>Prerequisites:</b> solid Python, some group theory or combinatorics.</li>
     </ul>
 
@@ -207,21 +204,8 @@
     <ul>
       <li><b>Project Leader:</b> Michael Zeng</li>
       <li><b>Description:</b> Use RL to find efficient arithmetic circuits for polynomials.</li>
+      <li><b>Members:</b> Kyle Zhang, Rohan Pandey, Naomi Morato</li>
       <li><b>Code:</b> <a href="https://github.com/uw-math-ai/PolyArithmeticCircuitsRL">GitHub repo</a></li>
-    </ul>
-
-    <h3>LLM Randomness: un-collapse an LLM</h3>
-    <ul>
-      <li><b>Project Leader:</b> TBD</li>
-      <li>
-        <b>Description:</b>
-        LLMs are very bad at generating true randomness. For example, they almost always tell the same joke, generate
-        the same random number from 1 to 100, etc. Can this be fixed by careful prompting or by fine-tuning? Does
-        fine-tuning to produce truly random numbers from 1 to 100 transfer to telling more diverse jokes? Does it also
-        transfer to more diverse proof strategies in Lean, thus boosting the proof rate? Goal: math-ai workshop at ICLR
-        or ICML 2026.
-      </li>
-      <li><b>Prerequisites:</b> LLM fine-tuning experience, basic probability.</li>
     </ul>
 
     <h3>AI for Quantum Code Compilation</h3>
@@ -249,6 +233,20 @@
         circuit implementations, enabling better exploration of architecture-specific tradeoffs in fault-tolerant quantum
         computing.
       </li>
+      <li><b>Members:</b> Christian Tarta, Sylvie Lausier, Mayee Sun, Sarju Patel</li>
+    </ul>
+
+    <h3>How good are LLMs at Lean?</h3>
+    <ul>
+      <li><b>Project Leader:</b> Tyson Klingner</li>
+      <li>
+        <b>Description:</b>
+        Design an evaluation procedure for various Lean tasks such as next step generation or entire proof generation.
+        Run our algorithms on frontier models to see which LLMs perform the best, providing guidance to the Lean
+        community on which LLMs to use. Use a scalable architecture so that our algorithms can be rerun when new models
+        are released.
+      </li>
+      <li><b>Members:</b> Escher Crawford, Drew Bladek</li>
     </ul>
 
     <h3>Deep learning for number theory</h3>
@@ -265,6 +263,7 @@
         ICML or ICLR.
       </li>
       <li><b>Prerequisites:</b> Python (must have), ML experience (desired)</li>
+      <li><b>Members:</b> Hemkesh Bandi, Akhil Srinivasan, Andrew Chen, Nina Tharamal, Claire Xu</li>
       <li><b>Code:</b> <a href="https://github.com/uw-math-ai/dl-nt">GitHub repo</a></li>
     </ul>
   </section>

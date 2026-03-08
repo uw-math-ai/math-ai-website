@@ -167,6 +167,12 @@ a {
   max-width: 50%;
 }
 
+.page-content {
+  max-width: 70%;
+  padding: 0.5% 2%;
+  line-height: 1.5;
+}
+
 .resources-content {
   max-width: 70%;
   padding: 2%;
@@ -225,6 +231,17 @@ nav a,
 .dropdown-content a {
   background: none;
   text-decoration: none;
+}
+
+/* --- support button --- */
+nav .support-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+nav .support-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 

@@ -233,6 +233,18 @@ nav a,
   text-decoration: none;
 }
 
+/* --- hackathon button --- */
+nav .hackathon-btn {
+  background-color: rgba(255, 200, 50, 0.25);
+  border: 1px solid rgba(255, 200, 50, 0.5);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+nav .hackathon-btn:hover {
+  background-color: rgba(255, 200, 50, 0.45);
+}
+
 /* --- support button --- */
 nav .support-btn {
   background-color: rgba(255, 255, 255, 0.15);

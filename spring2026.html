@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Winter 2026 Projects</title>
+  <title>Spring 2026 Projects</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
@@ -45,11 +45,10 @@
   </nav>
 
   <section>
-    <h1>Winter 2026 Math AI Lab Projects</h1>
+    <h1>Spring 2026 Math AI Lab Projects</h1>
 
     <p>
-      Project teams meet Mondays and Wednesdays from 4–5:30 pm in Denny Hall 303.<br />
-      Lean Together meets Fridays 3:30–6 pm in CMU B-006.
+      Project teams meet Mondays and Wednesdays from 4–5:30 pm in Odegaard 136.
     </p>
 
     <p>
@@ -67,6 +66,62 @@
       <a href="https://github.com/leanprover-community/mathlib4">mathlib4</a>.
     </p>
 
+    <h3>OpenMath: autoformalizing undergraduate textbooks</h3>
+    <ul>
+      <li><b>Project Leader:</b> Vasily Ilin</li>
+      <li>
+        <b>Description:</b>
+        Most undergraduate mathematics is present in
+        <a href="https://leanprover-community.github.io/mathlib4_docs/">mathlib</a>, but several big gaps remain:
+        differential geometry, partial differential equations, numerical analysis. We will autoformalize undergraduate
+        textbooks on numerical analysis of differential equations, starting with Iserles’s
+        <em>A First Course in the Numerical Analysis of Differential Equations</em> and Butcher’s
+        <em>Numerical Methods for Ordinary Differential Equations</em>. Since manual formalization is time-consuming,
+        we will build a semi-autonomous AI agent along the way, automating more of the process as the project
+        progresses. <b>Goal:</b> workshop paper at the
+        <a href="https://ai4math2026.github.io/">AI for Math workshop</a> at ICML 2026 (deadline May 25).
+      </li>
+      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/OpenMath">GitHub repo</a></li>
+      <li><b>Members:</b> Vasily Ilin, Theo Meek, Siyuan Ge, Saumi Joshi, Di Qiu Xiang</li>
+      <li><b>Prerequisites:</b> Lean, undergraduate analysis</li>
+    </ul>
+
+    <h3>Geometric Invariant Theory (GIT)</h3>
+    <ul>
+      <li><b>Project Leaders:</b> Arkamouli Debnath, Giovanni Inchiostro, Leo Mayer</li>
+      <li>
+        <b>Description:</b>
+        Geometric invariant theory (GIT) studies quotients of group actions in algebraic geometry. There is at present
+        almost no GIT in mathlib, presenting a unique opportunity to contribute. We focus on two aspects:
+        <ol>
+          <li>
+            <b>Commutative algebra:</b> formalize that for a finite group <em>G</em> acting on a polynomial ring
+            <em>k[x₁,…,xₙ]</em>, the invariant ring <em>k[x₁,…,xₙ]<sup>G</sup></em> is finitely generated, building
+            toward the linearly-reductive-group version.
+          </li>
+          <li>
+            <b>Geometric:</b> formalize the definition of a "good quotient" and prove theorems for simple examples of
+            finite groups acting on polynomial rings.
+          </li>
+        </ol>
+      </li>
+      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/Formalizing-geometric-invariant-theory-GIT-">GitHub repo</a></li>
+      <li><b>Members:</b> Xuanyu Yang, Emily Meng, Bohan Zhao, Jacob Boyce</li>
+      <li><b>Prerequisites:</b> Lean, commutative algebra or algebraic geometry</li>
+    </ul>
+
+    <h3>JAX in Lean</h3>
+    <ul>
+      <li><b>Project Leader:</b> Samuel Ainsworth</li>
+      <li>
+        <b>Description:</b>
+        The goal is to build a verified API for JAX in Lean.
+      </li>
+      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/porcupine-hangover">GitHub repo</a></li>
+      <li><b>Members:</b> Jeremy Ma</li>
+      <li><b>Prerequisites:</b> Lean, JAX or similar autodiff framework</li>
+    </ul>
+
     <h3>Geometric Measure Theory</h3>
     <ul>
       <li><b>Project Leader:</b> Ignacio Tejeda</li>
@@ -81,14 +136,15 @@
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
 
-    <h3>Commutative Algebra</h3>
+    <h3>Commutative Algebra: Auslander–Buchsbaum</h3>
     <ul>
       <li><b>Project Leaders:</b> Haoming Ning and Leo Mayer</li>
       <li>
         <b>Formalization target:</b>
-        The theorem that a regular local ring is a UFD, referred by some as the Auslander-Buchsbaum theorem.
+        The theorem that a regular local ring is a UFD, referred by some as the Auslander–Buchsbaum theorem.
         See Stacks Project <a href="https://stacks.math.columbia.edu/tag/0AG0">0AG0</a>.
       </li>
+      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/auslander-buchsbaum">GitHub repo</a></li>
       <li><b>Members:</b> Nailin Guan, Dora Kassabova</li>
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
@@ -102,14 +158,6 @@
         <a href="https://arxiv.org/abs/2503.07846">arXiv:2503.07846</a>, lemmas 3.1 and 3.2.
       </li>
       <li><b>Members:</b> George Peykanu, Grant Yang</li>
-      <li><b>Prerequisites:</b> Lean</li>
-    </ul>
-
-    <h3>Category Theory</h3>
-    <ul>
-      <li><b>Project Leader:</b> Nelson Niu</li>
-      <li><b>Formalization target:</b> Nelson Niu &amp; David Spivak’s Polynomial Functors <a href="https://toposinstitute.github.io/poly/poly-book.pdf">textbook</a>.</li>
-      <li><b>Members:</b> Sukhman Singh</li>
       <li><b>Prerequisites:</b> Lean</li>
     </ul>
 
@@ -152,16 +200,22 @@
       ML conference such as ICML, ICLR, EMNLP or Neurips.
     </p>
 
-    <h3>Lean error correction with LLMs</h3>
+    <h3>LeanGCD: stabilizing Lean generation</h3>
     <ul>
-      <li><b>Project Leader:</b> Vasily Ilin</li>
+      <li><b>Project Leaders:</b> Dean Light and Michael Theologitis</li>
       <li>
         <b>Description:</b>
-        Fine-tune LLMs to correct Lean errors, using compiler feedback. Create a diverse dataset of errors and train on
-        it. Submit to ICML 2026 in January.
+        LeanGCD aims to improve Lean proof generation by frontier large language models using inference-time
+        stabilization methods rather than retraining. The project adapts
+        <a href="https://arxiv.org/abs/2305.13971">grammar-constrained decoding techniques</a> with Lean’s
+        <a href="https://lean-lang.org/doc/reference/latest/Notations-and-Macros/Defining-New-Syntax/">syntax extensions</a>.
+        Planned contributions: a Lean-specific GCD implementation that plugs into HuggingFace/vLLM inference pipelines,
+        and empirical evaluation on MiniF2F, ProverBench, and PutnamBench.
+        <b>Goal:</b> ICML 2026 (October) or 2027 (January).
       </li>
-      <li><b>Members:</b> Evan Wang, Simon Chess, Daniel Lee, Siyuan Ge, Ajit Mallavarapu</li>
-      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/lean-error-correction">GitHub repo</a></li>
+      <li><b>Code:</b> <a href="https://github.com/DeanLight/LeanGCD">GitHub repo</a></li>
+      <li><b>Members:</b> Evan Wang, Ben Bioren, Naren Prabhu, Nhan Pham</li>
+      <li><b>Prerequisites:</b> Python, ML / LLM inference experience</li>
     </ul>
 
     <h3>Mathematician's copilot: Semantic Theorem Search</h3>
@@ -247,25 +301,8 @@
         community on which LLMs to use. Use a scalable architecture so that our algorithms can be rerun when new models
         are released.
       </li>
+      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/LLMsLean">GitHub repo</a></li>
       <li><b>Members:</b> Escher Crawford, Drew Bladek</li>
-    </ul>
-
-    <h3>Deep learning for number theory</h3>
-    <ul>
-      <li><b>Project Leader:</b> Junaid Hasan</li>
-      <li>
-        <b>Description:</b>
-        The goal is to explore to what extent modern machine learning algorithms (e.g., feedforward neural networks,
-        transformers, LLMs) can learn number-theoretic functions such as modular arithmetic, the Möbius function, or gcd.
-        We can first attempt to replicate results from the literature
-        (<a href="https://arxiv.org/pdf/2502.10335">arXiv:2502.10335</a>,
-        <a href="https://arxiv.org/abs/2308.15594">arXiv:2308.15594</a>)
-        and then explore our own functions and algorithms. We aim to submit to one of the major ML conferences such as
-        ICML or ICLR.
-      </li>
-      <li><b>Prerequisites:</b> Python (must have), ML experience (desired)</li>
-      <li><b>Members:</b> Hemkesh Bandi, Akhil Srinivasan, Andrew Chen, Nina Tharamal, Claire Xu</li>
-      <li><b>Code:</b> <a href="https://github.com/uw-math-ai/dl-nt">GitHub repo</a></li>
     </ul>
   </section>
 

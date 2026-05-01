@@ -91,17 +91,22 @@
       <li><b>Project Leaders:</b> Arkamouli Debnath, Giovanni Inchiostro, Leo Mayer</li>
       <li>
         <b>Description:</b>
-        Geometric invariant theory (GIT) studies quotients of group actions in algebraic geometry. There is at present
-        almost no GIT in mathlib, presenting a unique opportunity to contribute. We focus on two aspects:
+        Geometric Invariant Theory (GIT) is the theory of taking quotients in algebraic geometry. At present,
+        there is almost no formalization of GIT in Lean on mathlib, and this presents the unique opportunity to
+        contribute in two different directions as follows:
         <ol>
           <li>
-            <b>Commutative algebra:</b> formalize that for a finite group <em>G</em> acting on a polynomial ring
-            <em>k[x₁,…,xₙ]</em>, the invariant ring <em>k[x₁,…,xₙ]<sup>G</sup></em> is finitely generated, building
-            toward the linearly-reductive-group version.
+            <b>Commutative algebra:</b> Our main goal is to formalize the definition of a linearly reductive
+            group and prove the theorem: "If a linearly reductive group <em>G</em> acts locally finitely on a
+            finitely generated <em>k</em>-algebra <em>R</em>, then the invariant ring <em>R<sup>G</sup></em> is
+            a finitely generated <em>k</em>-algebra." The fact that a finite group is linearly reductive
+            (Maschke's theorem) is already in mathlib, and that proof uses the existence of a "Reynolds
+            operator". As part of this formalization project, we define a Reynolds operator and prove its
+            existence (in Lean) for any linearly reductive group.
           </li>
           <li>
-            <b>Geometric:</b> formalize the definition of a "good quotient" and prove theorems for simple examples of
-            finite groups acting on polynomial rings.
+            <b>Geometry:</b> The main content of GIT is to define a "good quotient". We aim to formalize the
+            definition.
           </li>
         </ol>
       </li>

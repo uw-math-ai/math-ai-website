@@ -1,18 +1,17 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { projectQuarters } from '$lib/data/projects';
 
 	let menuOpen = $state(false);
-	let projectsOpen = $state(false);
 
 	const navItems = [
+		{ href: '/people', label: 'People' },
+		{ href: '/research', label: 'Research' },
 		{ href: '/events', label: 'Events' },
 		{ href: '/resources', label: 'Resources' }
 	];
 
 	function closeMenus() {
 		menuOpen = false;
-		projectsOpen = false;
 	}
 </script>
 
@@ -34,22 +33,7 @@
 
 	<nav class:open={menuOpen} aria-label="Primary navigation">
 		<a class:active={$page.url.pathname === '/'} href="/" onclick={closeMenus}>Home</a>
-		<div class="nav-group">
-			<button
-				type="button"
-				class:active={$page.url.pathname.startsWith('/projects')}
-				onclick={() => (projectsOpen = !projectsOpen)}
-				aria-expanded={projectsOpen}
-			>
-				Projects
-			</button>
-			<div class="project-menu" class:open={projectsOpen}>
-				<a href="/projects" onclick={closeMenus}>Project Overview</a>
-				{#each projectQuarters as quarter}
-					<a href={`/projects/${quarter.slug}`} onclick={closeMenus}>{quarter.label}</a>
-				{/each}
-			</div>
-		</div>
+		<a class:active={$page.url.pathname.startsWith('/projects')} href="/projects" onclick={closeMenus}>Projects</a>
 		{#each navItems as item}
 			<a class:active={$page.url.pathname === item.href} href={item.href} onclick={closeMenus}>{item.label}</a>
 		{/each}
@@ -60,7 +44,7 @@
 			target="_blank"
 			rel="noreferrer"
 		>
-			Support
+			Support us
 		</a>
 	</nav>
 </header>
@@ -116,17 +100,16 @@
 		gap: 0.35rem;
 	}
 
-	nav a,
-	nav button {
+	nav a {
 		border: 0;
 		border-radius: 999px;
 		background: transparent;
 		color: var(--text);
 		font: inherit;
-		font-size: 0.92rem;
+		font-size: 0.88rem;
 		font-weight: 650;
 		text-decoration: none;
-		padding: 0.62rem 0.82rem;
+		padding: 0.58rem 0.72rem;
 		cursor: pointer;
 		transition:
 			background 180ms ease,
@@ -135,49 +118,13 @@
 	}
 
 	nav a:hover,
-	nav button:hover,
 	nav .active {
 		background: var(--soft);
 		color: var(--purple);
 	}
 
-	nav a:hover,
-	nav button:hover {
+	nav a:hover {
 		transform: translateY(-1px);
-	}
-
-	.nav-group {
-		position: relative;
-	}
-
-	.project-menu {
-		position: absolute;
-		top: calc(100% + 0.5rem);
-		left: 0;
-		display: grid;
-		min-width: 14rem;
-		max-height: min(70vh, 34rem);
-		overflow-y: auto;
-		padding: 0.45rem;
-		background: var(--surface-strong);
-		border: 1px solid var(--line);
-		border-radius: 0.75rem;
-		box-shadow: var(--shadow);
-		opacity: 0;
-		pointer-events: none;
-		transform: translateY(-0.3rem);
-		transition: all 180ms ease;
-	}
-
-	.nav-group:hover .project-menu,
-	.project-menu.open {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translateY(0);
-	}
-
-	.project-menu a {
-		border-radius: 0.5rem;
 	}
 
 	.accent {
@@ -223,7 +170,7 @@
 		top: 1.74rem;
 	}
 
-	@media (max-width: 940px) {
+	@media (max-width: 1080px) {
 		.site-header {
 			padding-inline: 1rem;
 		}
@@ -256,13 +203,6 @@
 			opacity: 1;
 			pointer-events: auto;
 			transform: translateY(0);
-		}
-
-		.project-menu {
-			position: static;
-			min-width: 0;
-			box-shadow: none;
-			margin: 0.2rem 0 0.4rem;
 		}
 	}
 </style>

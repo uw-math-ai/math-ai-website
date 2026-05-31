@@ -35,7 +35,7 @@
 				<span class="eyebrow">Featured AMS article</span>
 				<h2 id="featured-resource-title">Embracing AI and Formalization</h2>
 				<p>
-					Jarod Alper’s Bulletin of the AMS article on experimenting with tomorrow’s mathematical tools.
+					by Jarod Alper
 				</p>
 			</div>
 			<span class="featured-link">Read at AMS</span>

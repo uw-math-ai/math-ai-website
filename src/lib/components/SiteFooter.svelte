@@ -22,6 +22,7 @@
 	<div>
 		<strong>Math AI Lab</strong>
 		<span>Department of Mathematics, University of Washington © 2026</span>
+		<small>Report problems to zengrf at uw dot edu</small>
 	</div>
 	<div class="footer-links">
 		<a href="https://github.com/uw-math-ai" target="_blank" rel="noreferrer">GitHub</a>
@@ -81,6 +82,11 @@
 
 	.site-footer span {
 		color: color-mix(in srgb, white 72%, transparent);
+	}
+
+	.site-footer small {
+		color: color-mix(in srgb, white 64%, transparent);
+		font-size: 0.78rem;
 	}
 
 	.footer-links {

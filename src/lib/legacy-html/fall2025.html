@@ -151,7 +151,7 @@
             </li>     
             <li><b><font size="4">Reinforcement Learning for Polynomials.</font></b>
                 <ul>
-                    <li><b>Lead mentor:</b> Jarod Alper and Michael Zeng</li>
+                    <li><b>Lead mentor:</b> Jarod Alper and Michael R. Zeng</li>
                     <li><b>Members:</b> Bhaumik Mehta, Kyle Zhang, Rohan Pandey, Trey Adams, Naomi Morato, Evan Porter, Kaijie Jin</li>
                     <li><b>Description:</b> 
                         We will use reinforcement learning to train computers to search for efficient arithmetic circuits computing specific polynomials. This is in some sense a simplified version of proof generation, where computers are trained to search for proofs of theorems, except that in this case the search space is considerably smaller.  At the same time, this project may shed some light on some explicit questions in algebraic complexity theory, and specifically the algebraic analogue of P vs NP.  Our inspiration is the AlphaZero algorithm for two-player games, which we will adapt to a single-player game. The problem we will attack is to find efficient ways to compute a polynomial f(x_1, ..., x_n) using an arithmetic circuit consisting of + and x gates together with scalar multiplication. Our strategy is to use Monte Carlo Tree Search to train a deep neural network to learn an effective evaluation function (giving a score of how close the current state is from computing the polynomial) and a policy (a probability distribution over the next moves, with higher probability given to moves that simplify the expression). The computer is rewarded when it finds efficient arithmetic circuits. 

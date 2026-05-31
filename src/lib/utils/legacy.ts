@@ -189,6 +189,8 @@ function rewriteLinks(html: string) {
 		.replaceAll('href="resources.html"', 'href="/resources"')
 		.replaceAll('href="courses.html"', 'href="/resources#courses"')
 		.replaceAll('href="seminars.html"', 'href="/resources#seminars"')
+		.replaceAll('href="people.html"', 'href="/people"')
+		.replaceAll('href="research.html"', 'href="/research"')
 		.replaceAll('href="http://ai.math.uw.edu/"', 'href="/"')
 		.replaceAll('href="http://ai.math.uw.edu"', 'href="/"');
 

@@ -28,14 +28,6 @@ const cltSnippet = `theorem mgf_of_iid
   rw [Z_def]
   rw [ProbabilityTheory.mgf_smul_left]`;
 
-const gitSnippet = `import Mathlib.RepresentationTheory.Maschke
-import Mathlib.RepresentationTheory.Rep
-
-def IsLinearAlgebraic := ∃ (n : Type*), ∃ _ : DecidableEq n, ∃ _ : Fintype n,
-    ∃ H : Subgroup (GL n k), Nonempty (H ≃* G)
-
-#check LinearMap.equivariantProjection`;
-
 const luSnippet = `theorem Matrix.luFactorization_reconstruct
     (M : Matrix (Fin a) (Fin b) R) :
     let lu := Matrix.luFactorization M
@@ -50,11 +42,6 @@ theorem Matrix.luFactorization_upper_isEchelonForm
 const cltSource = {
 	sourceLabel: 'uw-math-ai/central_limit_theorem, CentralLimitTheorem/main.lean',
 	sourceUrl: 'https://github.com/uw-math-ai/central_limit_theorem/blob/master/CentralLimitTheorem/main.lean#L102-L122'
-};
-
-const gitSource = {
-	sourceLabel: 'uw-math-ai/Formalizing-geometric-invariant-theory-GIT-',
-	sourceUrl: 'https://github.com/uw-math-ai/Formalizing-geometric-invariant-theory-GIT-'
 };
 
 const provableComputationSource = {
@@ -88,8 +75,8 @@ export const resourcesLeanSnippet: LeanSnippet = {
 export function leanSnippetForQuarter(slug: string) {
 	if (slug === 'spring-2026') {
 		return {
-			code: gitSnippet,
-			...gitSource
+			code: cltSnippet,
+			...cltSource
 		};
 	}
 	if (slug === 'winter-2026') {

@@ -3,7 +3,7 @@
 		{ name: 'Jarod Alper', department: 'Mathematics', role: 'Faculty', website: '' },
 		{ name: 'Vasily Ilin', department: 'Mathematics', role: 'Faculty', website: '' },
 		{ name: 'Dhruv Bhatia', department: 'Mathematics', role: 'Organizer', website: '' },
-		{ name: 'Michael Zeng', department: 'Mathematics', role: 'Organizer', website: 'https://zengrf.github.io' },
+		{ name: 'Michael R. Zeng', department: 'Mathematics', role: 'Organizer', website: 'https://zengrf.github.io' },
 		{ name: 'Oliver Flatt', department: 'PLSE', role: 'Organizer', website: '' },
 		{ name: 'Zachary Tatlock', department: 'PLSE', role: 'Faculty', website: '' },
 		{ name: 'Gilbert Bernstein', department: 'PLSE', role: 'Faculty', website: '' },

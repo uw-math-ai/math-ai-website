@@ -1,11 +1,11 @@
 <script lang="ts">
 	import Reveal from '$lib/components/Reveal.svelte';
 	import CodePanel from '$lib/components/CodePanel.svelte';
+	import CountUp from '$lib/components/CountUp.svelte';
 	import { projectIndexLeanSnippet } from '$lib/data/leanSnippets';
-	import { projectQuarters } from '$lib/data/projects';
+	import { projectQuarters, totalProjectCount } from '$lib/data/projects';
 
 	let query = $state('');
-	const projectCount = projectQuarters.length;
 
 	function searchableProjectText(html: string) {
 		return html
@@ -33,10 +33,14 @@
 <section class="page-shell hero compact-hero">
 	<div>
 		<span class="eyebrow">Projects</span>
-		<h1>Project Quarters</h1>
+		<h1>Projects by Quarter</h1>
 		<p>
-			All {projectCount} Math AI Lab project quarters, ordered newest to oldest.
+			All {totalProjectCount} Math AI Lab projects by academic quarter, ordered newest to oldest.
 		</p>
+		<div class="project-total">
+			<strong><CountUp value={totalProjectCount} /></strong>
+			<span>projects across {projectQuarters.length} quarters</span>
+		</div>
 	</div>
 	<CodePanel snippet={projectIndexLeanSnippet} />
 </section>
@@ -65,6 +69,29 @@
 <style>
 	.compact-hero {
 		min-height: 26rem;
+	}
+
+	.project-total {
+		display: inline-grid;
+		gap: 0.1rem;
+		margin-top: 1.25rem;
+		padding: 0.9rem 1.05rem;
+		background: var(--surface);
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		box-shadow: var(--shadow-soft);
+	}
+
+	.project-total strong {
+		color: var(--heading);
+		font-family: var(--font-display);
+		font-size: clamp(2.2rem, 5vw, 3.8rem);
+		line-height: 1;
+	}
+
+	.project-total span {
+		color: var(--muted);
+		font-weight: 750;
 	}
 
 	.filter-row {

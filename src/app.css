@@ -28,6 +28,8 @@
 	--shadow-soft: 0 8px 28px rgba(49, 0, 108, 0.08);
 	--glow-small: 0 0 0 transparent;
 	--footer-texture: linear-gradient(90deg, transparent, transparent);
+	--ambient-symbol: rgba(50, 0, 110, 0.44);
+	--ambient-halo: rgba(214, 169, 0, 0.2);
 	color-scheme: light;
 }
 
@@ -49,6 +51,8 @@
 	--shadow-soft: 0 12px 42px rgba(0, 0, 0, 0.36), 0 0 22px rgba(95, 244, 255, 0.1);
 	--glow-small: 0 0 26px rgba(196, 154, 255, 0.48), 0 0 44px rgba(95, 244, 255, 0.16);
 	--glow-strong: 0 0 34px rgba(196, 154, 255, 0.58), 0 0 76px rgba(255, 215, 90, 0.22);
+	--ambient-symbol: rgba(255, 215, 90, 0.62);
+	--ambient-halo: rgba(95, 244, 255, 0.32);
 	--footer-texture:
 		linear-gradient(rgba(100, 243, 255, 0.05) 1px, transparent 1px),
 		linear-gradient(90deg, rgba(100, 243, 255, 0.05) 1px, transparent 1px);
@@ -87,7 +91,14 @@ body {
 }
 
 main {
+	position: relative;
+	z-index: 1;
 	min-height: 70vh;
+}
+
+.site-footer {
+	position: relative;
+	z-index: 1;
 }
 
 a {

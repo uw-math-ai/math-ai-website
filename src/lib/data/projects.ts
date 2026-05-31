@@ -23,6 +23,8 @@ export type ProjectQuarter = {
 	html: string;
 };
 
+export const totalProjectCount = 59;
+
 export const projectQuarters: ProjectQuarter[] = [
 	{
 		slug: 'spring-2026',

@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Reveal from '$lib/components/Reveal.svelte';
+	import CountUp from '$lib/components/CountUp.svelte';
 	import { labEvents } from '$lib/data/events';
-	import { arxivPapers } from '$lib/data/papers';
-	import { projectQuarters } from '$lib/data/projects';
+	import { projectQuarters, totalProjectCount } from '$lib/data/projects';
+	import { featuredResearch } from '$lib/data/research';
 
 	const upcoming = labEvents
 		.filter((event) => new Date(`${event.date}T${event.startTime}:00`) >= new Date())
@@ -50,19 +51,19 @@
 	<Reveal>
 		<div class="stats">
 			<div>
-				<strong>59</strong>
+				<strong><CountUp value={totalProjectCount} /></strong>
 				<span>projects</span>
 			</div>
 			<div>
-				<strong>169</strong>
+				<strong><CountUp value={169} /></strong>
 				<span>undergraduate students</span>
 			</div>
 			<div>
-				<strong>17</strong>
+				<strong><CountUp value={17} /></strong>
 				<span>graduate students</span>
 			</div>
 			<div>
-				<strong>10</strong>
+				<strong><CountUp value={10} /></strong>
 				<span>professors</span>
 			</div>
 		</div>
@@ -99,19 +100,20 @@
 <section class="page-shell section papers-section">
 	<Reveal>
 		<div class="section-header">
-			<span class="eyebrow">Preprints</span>
-			<h2>arXiv Papers</h2>
-			<p>Recent Math AI Lab preprints and project papers.</p>
+			<span class="eyebrow">Research</span>
+			<h2>Publications & Preprints</h2>
+			<p>Selected recent Math AI Lab papers. The full research page collects the lab's current conference papers, workshop papers, preprints, and essays.</p>
 		</div>
 		<div class="paper-grid">
-			{#each arxivPapers as paper}
+			{#each featuredResearch as paper}
 				<a class="paper-card" href={paper.url} target="_blank" rel="noreferrer">
-					<span>arXiv:{paper.arxivId}</span>
+					<span>{paper.venue}</span>
 					<strong>{paper.title}</strong>
-					<p>{paper.summary}</p>
+					<p>{paper.abstract}</p>
 				</a>
 			{/each}
 		</div>
+		<a class="button research-link" href="/research">Open Research Page</a>
 	</Reveal>
 </section>
 
@@ -121,9 +123,18 @@
 			<div class="section-header">
 				<span class="eyebrow">Now</span>
 				<h2>Events</h2>
-				<p>Upcoming events and seminars. </p>
+				<p>Upcoming events, seminars, and hosted Math AI Lab gatherings.</p>
 			</div>
 			<div class="event-list">
+				<a class="event-card hackathon-home-card" href="https://uw2026leanhackathon.github.io/" target="_blank" rel="noreferrer">
+					<img
+						src="/logos/uw-2026-lean-hackathon-banner.png"
+						alt="UW 2026 Lean Hackathon banner"
+					/>
+					<span>Hosted event</span>
+					<strong>UW 2026 Lean Hackathon</strong>
+					<small>We hosted a Lean hackathon bringing together formalization, math, and AI communities.</small>
+				</a>
 				{#each upcoming as event}
 					<a class="event-card" href={event.sourceUrl} target="_blank" rel="noreferrer">
 						<span>{formatDate(event.date)}</span>
@@ -168,7 +179,7 @@
 <section class="page-shell section">
 	<Reveal>
 		<div class="photo-panel">
-			<img src="/photos/fall2025.png" alt="Fall 2025 Math AI Lab" />
+			<img src="/photos/fall2025.jpg" alt="Fall 2025 Math AI Lab" />
 			<div>
 				<span class="eyebrow">Community</span>
 				<h2>Math AI Lab Photo from Fall 2025</h2>
@@ -301,6 +312,10 @@
 		gap: 1rem;
 	}
 
+	.research-link {
+		margin-top: 1rem;
+	}
+
 	.paper-card {
 		display: grid;
 		align-content: start;
@@ -374,6 +389,20 @@
 
 	.event-card small {
 		color: var(--muted);
+	}
+
+	.hackathon-home-card {
+		gap: 0.55rem;
+	}
+
+	.hackathon-home-card img {
+		display: block;
+		width: 100%;
+		max-height: 10rem;
+		object-fit: contain;
+		border: 1px solid var(--line);
+		border-radius: calc(var(--radius) - 0.2rem);
+		background: white;
 	}
 
 	.photo-panel {

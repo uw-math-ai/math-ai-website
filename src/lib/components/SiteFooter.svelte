@@ -22,7 +22,7 @@
 	<div>
 		<strong>Math AI Lab</strong>
 		<span>Department of Mathematics, University of Washington © 2026</span>
-		<small>Report problems to zengrf at uw dot edu</small>
+		<small>Report a bug to zengrf at uw dot edu</small>
 	</div>
 	<div class="footer-links">
 		<a href="https://github.com/uw-math-ai" target="_blank" rel="noreferrer">GitHub</a>

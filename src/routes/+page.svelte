@@ -68,33 +68,6 @@
 			</div>
 		</div>
 	</Reveal>
-
-	<Reveal>
-		<div class="intro-grid">
-			<article class="card">
-				<h2>What We Do</h2>
-				<p>
-					Broadly, our projects fall into the categories of formalization and AI for Math. You can find many of them at 
-					<a href="https://github.com/orgs/uw-math-ai">github.com/orgs/uw-math-ai</a>. We also work on
-					search, datasets, machine learning systems, and the meaning of mathematics in the age of AI.
-				</p>
-			</article>
-			<article class="card">
-				<h2>When We Meet</h2>
-				<p>
-					We meet Mondays and Wednesdays from 4-5:30 pm. Current project pages list the active room and
-					quarter-specific details.
-				</p>
-			</article>
-			<article class="card">
-				<h2>Events</h2>
-				<p>
-					The Events page collects the Math AI Seminar agenda and archive, maintained from UW Math source
-					pages.
-				</p>
-			</article>
-		</div>
-	</Reveal>
 </section>
 
 <section class="page-shell section papers-section">
@@ -159,7 +132,6 @@
 		<div class="section-header">
 			<span class="eyebrow">Projects</span>
 			<h2>Recent Quarters</h2>
-			<p>Project pages now use structured navigation, categories, and expandable project sections.</p>
 		</div>
 		<div class="grid">
 			{#each latestProjects as quarter}
@@ -273,19 +245,6 @@
 	.stats span {
 		color: var(--muted);
 		font-weight: 650;
-	}
-
-	.intro-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1rem;
-		margin-top: 1rem;
-	}
-
-	.intro-grid h2 {
-		margin: 0 0 0.5rem;
-		font-family: var(--font-display);
-		color: var(--heading);
 	}
 
 	.banded {
@@ -441,7 +400,6 @@
 
 	@media (max-width: 860px) {
 		.stats,
-		.intro-grid,
 		.paper-grid,
 		.event-list,
 		.photo-panel {

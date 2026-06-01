@@ -3,7 +3,8 @@
 
 	let { children, class: className = '' } = $props();
 	let element: HTMLElement;
-	let visible = $state(false);
+	let enhanced = $state(false);
+	let visible = $state(true);
 
 	$effect(() => {
 		if (!browser || !element) return;
@@ -11,6 +12,9 @@
 			visible = true;
 			return;
 		}
+
+		enhanced = true;
+		visible = false;
 
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -27,12 +31,17 @@
 	});
 </script>
 
-<div bind:this={element} class={`reveal ${className}`} class:visible>
+<div bind:this={element} class={`reveal ${className}`} class:enhanced class:visible>
 	{@render children()}
 </div>
 
 <style>
 	.reveal {
+		opacity: 1;
+		transform: none;
+	}
+
+	.reveal.enhanced {
 		opacity: 0;
 		transform: translateY(18px);
 		transition:
@@ -40,7 +49,7 @@
 			transform 520ms ease;
 	}
 
-	.reveal.visible {
+	.reveal.enhanced.visible {
 		opacity: 1;
 		transform: translateY(0);
 	}

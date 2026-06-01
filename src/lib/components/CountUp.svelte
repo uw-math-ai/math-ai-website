@@ -4,6 +4,7 @@
 	let { value, suffix = '' }: { value: number; suffix?: string } = $props();
 	let element: HTMLElement;
 	let current = $state(0);
+	let animating = $state(false);
 
 	$effect(() => {
 		if (!browser || !element) {
@@ -15,6 +16,9 @@
 			current = value;
 			return;
 		}
+
+		animating = true;
+		current = 0;
 
 		let frame = 0;
 		const observer = new IntersectionObserver(
@@ -45,4 +49,4 @@
 	});
 </script>
 
-<span bind:this={element}>{current}{suffix}</span>
+<span bind:this={element}>{animating ? current : value}{suffix}</span>

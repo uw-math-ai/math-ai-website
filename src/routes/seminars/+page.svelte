@@ -1,13 +1,17 @@
+<script lang="ts">
+	import { sitePath } from '$lib/paths';
+</script>
+
 <svelte:head>
 	<title>Seminars | Math AI Lab</title>
-	<meta http-equiv="refresh" content="0; url=/resources#seminars" />
-	<link rel="canonical" href="/resources#seminars" />
+	<meta http-equiv="refresh" content={`0; url=${sitePath('/resources#seminars')}`} />
+	<link rel="canonical" href={sitePath('/resources#seminars')} />
 </svelte:head>
 
 <section class="page-shell section redirect-page">
 	<h1>Seminars</h1>
 	<p>Seminars are now part of the combined Resources page.</p>
-	<a class="button primary" href="/resources#seminars">Open seminars</a>
+	<a class="button primary" href={sitePath('/resources#seminars')}>Open seminars</a>
 </section>
 
 <style>

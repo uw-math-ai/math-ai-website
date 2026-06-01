@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Reveal from '$lib/components/Reveal.svelte';
 	import { initials, labPhotos, leadership, members, projectLeaders } from '$lib/data/people';
+	import { sitePath } from '$lib/paths';
 
 	function sortKey(name: string) {
 		const parts = name.trim().split(/\s+/);
@@ -29,7 +30,7 @@
 	<p class="people-intro">
 		The people of the UW Math AI Lab during the 2025-26 academic year (Fall 2025 - Spring
 		2026). For the projects themselves, see the quarterly pages under
-		<a href="/projects/spring-2026">Projects</a>.
+		<a href={sitePath('/projects/spring-2026')}>Projects</a>.
 	</p>
 </section>
 
@@ -39,7 +40,7 @@
 		<div class="presenters-grid leadership-grid">
 			{#each alphabeticalLeadership as person}
 				<a class="presenter-card linkable" href={person.url} target="_blank" rel="noreferrer">
-					<img class="presenter-photo" src={person.image} alt={person.name} />
+					<img class="presenter-photo" src={sitePath(person.image)} alt={person.name} />
 					<span class="presenter-name">{person.name}</span>
 					<span class="presenter-role">{person.role}</span>
 				</a>
@@ -54,7 +55,7 @@
 		<div class="presenters-grid">
 			{#each alphabeticalProjectLeaders as person}
 				<a class="presenter-card linkable" href={person.url} target="_blank" rel="noreferrer">
-					<img class="presenter-photo" src={person.image} alt={person.name} />
+					<img class="presenter-photo" src={sitePath(person.image)} alt={person.name} />
 					<span class="presenter-name">{person.name}</span>
 					<span class="presenter-role">{person.role}</span>
 				</a>
@@ -87,14 +88,14 @@
 		<div class="lab-photos">
 			{#each labPhotos.slice(0, 3) as photo}
 				<figure class="lab-photo">
-					<img src={photo.src} alt={photo.alt} />
+					<img src={sitePath(photo.src)} alt={photo.alt} />
 					<figcaption>// {photo.caption}</figcaption>
 				</figure>
 			{/each}
 			<div class="lab-photo-pair">
 				{#each labPhotos.slice(3) as photo}
 					<figure class="lab-photo">
-						<img src={photo.src} alt={photo.alt} />
+						<img src={sitePath(photo.src)} alt={photo.alt} />
 						<figcaption>// {photo.caption}</figcaption>
 					</figure>
 				{/each}

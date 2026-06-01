@@ -4,6 +4,7 @@
 	import CountUp from '$lib/components/CountUp.svelte';
 	import { projectIndexLeanSnippet } from '$lib/data/leanSnippets';
 	import { projectQuarters, totalProjectCount } from '$lib/data/projects';
+	import { sitePath } from '$lib/paths';
 
 	let query = $state('');
 
@@ -53,7 +54,7 @@
 
 		<div class="quarter-grid">
 			{#each filtered as quarter}
-				<a class="card quarter-card" href={`/projects/${quarter.slug}`}>
+				<a class="card quarter-card" href={sitePath(`/projects/${quarter.slug}`)}>
 					<div class="meta">
 						<span class="pill">{quarter.label}</span>
 						{#if quarter.status === 'current'}<span class="pill">current</span>{/if}

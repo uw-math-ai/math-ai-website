@@ -1,4 +1,5 @@
 import { projectRedirects } from '$lib/data/projects';
+import { sitePath } from '$lib/paths';
 
 const staticAssetPrefixes = ['photos/', 'slides/', 'papers/', 'logos/'];
 
@@ -182,21 +183,21 @@ function rewriteLinks(html: string) {
 	let output = html;
 
 	for (const [legacyFile, route] of projectRedirects.entries()) {
-		output = output.replaceAll(`href="${legacyFile}"`, `href="${route}"`);
+		output = output.replaceAll(`href="${legacyFile}"`, `href="${sitePath(route)}"`);
 	}
 
 	output = output
-		.replaceAll('href="resources.html"', 'href="/resources"')
-		.replaceAll('href="courses.html"', 'href="/resources#courses"')
-		.replaceAll('href="seminars.html"', 'href="/resources#seminars"')
-		.replaceAll('href="people.html"', 'href="/people"')
-		.replaceAll('href="research.html"', 'href="/research"')
-		.replaceAll('href="http://ai.math.uw.edu/"', 'href="/"')
-		.replaceAll('href="http://ai.math.uw.edu"', 'href="/"');
+		.replaceAll('href="resources.html"', `href="${sitePath('/resources')}"`)
+		.replaceAll('href="courses.html"', `href="${sitePath('/resources#courses')}"`)
+		.replaceAll('href="seminars.html"', `href="${sitePath('/resources#seminars')}"`)
+		.replaceAll('href="people.html"', `href="${sitePath('/people')}"`)
+		.replaceAll('href="research.html"', `href="${sitePath('/research')}"`)
+		.replaceAll('href="http://ai.math.uw.edu/"', `href="${sitePath('/')}"`)
+		.replaceAll('href="http://ai.math.uw.edu"', `href="${sitePath('/')}"`);
 
 	for (const prefix of staticAssetPrefixes) {
-		output = output.replaceAll(`src="${prefix}`, `src="/${prefix}`);
-		output = output.replaceAll(`href="${prefix}`, `href="/${prefix}`);
+		output = output.replaceAll(`src="${prefix}`, `src="${sitePath(`/${prefix}`)}`);
+		output = output.replaceAll(`href="${prefix}`, `href="${sitePath(`/${prefix}`)}`);
 	}
 
 	return output;

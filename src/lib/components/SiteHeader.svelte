@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { routePath, sitePath } from '$lib/paths';
 
 	let menuOpen = $state(false);
+	let pathname = $derived(routePath($page.url.pathname));
 
 	const navItems = [
 		{ href: '/people', label: 'People' },
@@ -16,8 +18,8 @@
 </script>
 
 <header class="site-header">
-	<a class="brand" href="/" onclick={closeMenus} aria-label="Math AI Lab home">
-		<img src="/logos/math-ai-mark.svg" alt="" />
+	<a class="brand" href={sitePath('/')} onclick={closeMenus} aria-label="Math AI Lab home">
+		<img src={sitePath('/logos/math-ai-mark.svg')} alt="" />
 		<span>
 			<strong>Math AI Lab</strong>
 			<small>University of Washington</small>
@@ -32,10 +34,10 @@
 	</button>
 
 	<nav class:open={menuOpen} aria-label="Primary navigation">
-		<a class:active={$page.url.pathname === '/'} href="/" onclick={closeMenus}>Home</a>
-		<a class:active={$page.url.pathname.startsWith('/projects')} href="/projects" onclick={closeMenus}>Projects</a>
+		<a class:active={pathname === '/'} href={sitePath('/')} onclick={closeMenus}>Home</a>
+		<a class:active={pathname.startsWith('/projects')} href={sitePath('/projects')} onclick={closeMenus}>Projects</a>
 		{#each navItems as item}
-			<a class:active={$page.url.pathname === item.href} href={item.href} onclick={closeMenus}>{item.label}</a>
+			<a class:active={pathname === item.href} href={sitePath(item.href)} onclick={closeMenus}>{item.label}</a>
 		{/each}
 		<a class="accent" href="https://uw2026leanhackathon.github.io/" target="_blank" rel="noreferrer">Lean Hackathon</a>
 		<a

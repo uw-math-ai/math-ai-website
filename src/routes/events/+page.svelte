@@ -3,6 +3,7 @@
 	import CodePanel from '$lib/components/CodePanel.svelte';
 	import { eventsLeanSnippet } from '$lib/data/leanSnippets';
 	import { labEvents } from '$lib/data/events';
+	import { sitePath } from '$lib/paths';
 
 	let query = $state('');
 	let type = $state('all');
@@ -68,7 +69,7 @@
 		<div class="hackathon-card">
 			<div class="hackathon-banner">
 				<img
-					src="/logos/uw-2026-lean-hackathon-banner.png"
+					src={sitePath('/logos/uw-2026-lean-hackathon-banner.png')}
 					alt="UW 2026 Lean Hackathon banner"
 					width="1440"
 					height="810"

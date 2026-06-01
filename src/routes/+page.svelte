@@ -4,6 +4,7 @@
 	import { labEvents } from '$lib/data/events';
 	import { projectQuarters, totalProjectCount } from '$lib/data/projects';
 	import { featuredResearch } from '$lib/data/research';
+	import { sitePath } from '$lib/paths';
 
 	const upcoming = labEvents
 		.filter((event) => new Date(`${event.date}T${event.startTime}:00`) >= new Date())
@@ -29,7 +30,7 @@
 	<div>
 		<span class="eyebrow">University of Washington</span>
 		<div class="hero-title-lockup">
-			<img src="/logos/math-ai-lab-logo.png" alt="" />
+			<img src={sitePath('/logos/math-ai-lab-logo.png')} alt="" />
 			<h1>Math AI Lab</h1>
 		</div>
 		<p>
@@ -39,8 +40,8 @@
 			<a href="https://sites.math.washington.edu/~jarod/">Jarod Alper</a>.
 		</p>
 		<div class="actions">
-			<a class="button primary" href="/projects/spring-2026">Ongoing Projects</a>
-			<a class="button" href="/events">Event Calendar</a>
+			<a class="button primary" href={sitePath('/projects/spring-2026')}>Ongoing Projects</a>
+			<a class="button" href={sitePath('/events')}>Event Calendar</a>
 			<a class="button" href="https://github.com/uw-math-ai" target="_blank" rel="noreferrer">GitHub</a>
 		</div>
 	</div>
@@ -86,7 +87,7 @@
 				</a>
 			{/each}
 		</div>
-		<a class="button research-link" href="/research">Open Research Page</a>
+		<a class="button research-link" href={sitePath('/research')}>Open Research Page</a>
 	</Reveal>
 </section>
 
@@ -101,7 +102,7 @@
 			<div class="event-list">
 				<a class="event-card hackathon-home-card" href="https://uw2026leanhackathon.github.io/" target="_blank" rel="noreferrer">
 					<img
-						src="/logos/uw-2026-lean-hackathon-banner.png"
+						src={sitePath('/logos/uw-2026-lean-hackathon-banner.png')}
 						alt="UW 2026 Lean Hackathon banner"
 					/>
 					<span>Hosted event</span>
@@ -115,14 +116,14 @@
 						<small>{event.speaker} · {event.location}</small>
 					</a>
 				{:else}
-					<a class="event-card" href="/events">
+					<a class="event-card" href={sitePath('/events')}>
 						<span>Archive</span>
 						<strong>Browse past Math AI events</strong>
 						<small>The agenda archive is updated from the official UW Math source.</small>
 					</a>
 				{/each}
 			</div>
-			<a class="button" href="/events">Event Calendar</a>
+			<a class="button" href={sitePath('/events')}>Event Calendar</a>
 		</Reveal>
 	</div>
 </section>
@@ -135,7 +136,7 @@
 		</div>
 		<div class="grid">
 			{#each latestProjects as quarter}
-				<a class="card project-card" href={`/projects/${quarter.slug}`}>
+				<a class="card project-card" href={sitePath(`/projects/${quarter.slug}`)}>
 					<div class="meta">
 						<span class="pill">{quarter.label}</span>
 						{#if quarter.status === 'current'}<span class="pill">current</span>{/if}
@@ -151,7 +152,7 @@
 <section class="page-shell section">
 	<Reveal>
 		<div class="photo-panel">
-			<img src="/photos/fall2025.jpg" alt="Fall 2025 Math AI Lab" />
+			<img src={sitePath('/photos/fall2025.jpg')} alt="Fall 2025 Math AI Lab" />
 			<div>
 				<span class="eyebrow">Community</span>
 				<h2>Math AI Lab Photo from Fall 2025</h2>

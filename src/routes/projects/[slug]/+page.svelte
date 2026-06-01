@@ -3,6 +3,7 @@
 	import CodePanel from '$lib/components/CodePanel.svelte';
 	import { leanSnippetForQuarter } from '$lib/data/leanSnippets';
 	import type { ProjectQuarter } from '$lib/data/projects';
+	import { sitePath } from '$lib/paths';
 
 	let { data } = $props<{ data: { quarter: ProjectQuarter } }>();
 	let quarter = $derived(data.quarter);
@@ -17,7 +18,7 @@
 		<span class="eyebrow">{quarter.term} {quarter.year}</span>
 		<h1>{quarter.label} Projects</h1>
 		<div class="actions">
-			<a class="button" href="/projects">All projects</a>
+			<a class="button" href={sitePath('/projects')}>All projects</a>
 		</div>
 	</div>
 	<CodePanel snippet={leanSnippetForQuarter(quarter.slug)} />

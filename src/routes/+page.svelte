@@ -172,6 +172,8 @@
 
 	.home-hero {
 		grid-template-columns: minmax(0, 1fr);
+		min-height: auto;
+		padding-bottom: clamp(1rem, 2vw, 1.5rem);
 	}
 
 	.home-hero > div {
@@ -205,7 +207,11 @@
 	}
 
 	.home-stats-section {
-		padding-top: 1rem;
+		padding: clamp(0.75rem, 2vw, 1.25rem) 0 clamp(0.75rem, 2vw, 1.25rem);
+	}
+
+	.papers-section {
+		padding-top: clamp(1.5rem, 4vw, 2.75rem);
 	}
 
 	.stats {
